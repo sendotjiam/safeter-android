@@ -1,9 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundclr"
+    android:orientation="vertical"
     tools:context=".TopUpPage">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundclr">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ic_back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@drawable/shadow" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/white"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunitolight"
+                android:text="Your Current Balance"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Rp 120.000"
+                android:textColor="@color/black"
+                android:textSize="35sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nunitolight"
+                android:text="Choose the amount below:"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rp50000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="Rp 50.000"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rp100000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="Rp 100.000"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rp150000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="Rp 150.000"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rp200000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="Rp 200.000"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nunitolight"
+                android:text="Choose your payment method:"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/UVO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="UVO"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/GOPIY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="GOPIY"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/SHOCEEPAY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="SHOCEEPAY"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/PalPay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/nunitobold"
+                    android:onClick="btn_amount"
+                    android:text="PalPay"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/backgroundclr"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nunitolight"
+                android:text="Confirm with your password"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/nunitobold"
+                android:layout_marginTop="5dp"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_topup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_edit"
+                android:fontFamily="@font/nunitobold"
+                android:onClick="topup"
+                android:text="TOP UP"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
