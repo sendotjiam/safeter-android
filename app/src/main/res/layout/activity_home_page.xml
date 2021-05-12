@@ -143,6 +143,7 @@
             android:layout_height="130dp"
             android:layout_gravity="bottom"
             android:paddingRight="20dp"
+            android:onClick="oneclick"
             android:src="@drawable/profile" />
 
     </LinearLayout>
