@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pindahsementara(View view) {
-        Intent intent = new Intent(this, TopUpPage.class);
+        Intent intent = new Intent(this, SubscriptionPage.class);
         startActivity(intent);
     }
 }
