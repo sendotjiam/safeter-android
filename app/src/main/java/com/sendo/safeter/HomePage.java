@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -25,5 +26,19 @@ public class HomePage extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+    }
+
+    public void subscription(View view) {
+        Intent intent = new Intent(this, SubscriptionPage.class);
+        startActivity(intent);
+    }
+
+    public void call(View view) {
+    }
+
+    public void profile(View view) {
+        Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
     }
 }
