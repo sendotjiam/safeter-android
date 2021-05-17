@@ -3,6 +3,7 @@ package com.sendo.safeter.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.sendo.safeter.R;
 import com.sendo.safeter.database.UserDB;
@@ -26,4 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void storeUser() {}
 
     private void validation() {}
+
+    public void onGenderRadioClicked(View view) {}
 }

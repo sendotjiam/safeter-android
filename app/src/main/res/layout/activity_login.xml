@@ -1,9 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.LoginActivity"
+    android:padding="16dp"
+    android:background="@color/backgroundclr"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Safeter"
+        style="@style/app_name"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="32dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        style="@style/subtitle"
+        android:layout_marginBottom="32dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/register_card"
+        android:orientation="vertical"
+        android:padding="30dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                style="@style/input_label"
+                android:layout_marginBottom="8dp"
+                />
+            <EditText
+                android:id="@+id/et_login_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/input_box"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                style="@style/input_label"
+                android:layout_marginBottom="8dp"
+                />
+            <EditText
+                android:id="@id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/input_box"
+                android:inputType="textPassword"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_login_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="SIGN IN"
+                android:textColor="@color/white"
+                android:fontFamily="@font/nunitosemibold"
+                android:background="@drawable/button_primary"
+                />
+            <Button
+                android:id="@+id/btn_login_sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                android:fontFamily="@font/nunitosemibold"
+                android:textColor="@color/backgroundclr"
+                android:background="@drawable/button_secondary"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
