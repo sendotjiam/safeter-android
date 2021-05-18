@@ -9,9 +9,10 @@
     android:background="@color/backgroundclr"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Safeter"
+        android:text="@string/safeter"
         style="@style/app_name"
         android:layout_marginTop="48dp"
         android:layout_marginBottom="32dp"
@@ -20,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         style="@style/subtitle"
         android:layout_marginBottom="32dp"
         />
@@ -40,16 +41,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/input_email"
                 style="@style/input_label"
                 android:layout_marginBottom="8dp"
                 />
             <EditText
-                android:id="@+id/et_login_name"
+                android:id="@+id/et_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:background="@drawable/input_box"
+                android:inputType="textEmailAddress"
                 />
         </LinearLayout>
         <LinearLayout
@@ -60,12 +62,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/input_password"
                 style="@style/input_label"
                 android:layout_marginBottom="8dp"
                 />
             <EditText
-                android:id="@id/et_login_password"
+                android:id="@+id/et_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -82,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="SIGN IN"
+                android:text="@string/sign_in"
                 android:textColor="@color/white"
                 android:fontFamily="@font/nunitosemibold"
                 android:background="@drawable/button_primary"
@@ -91,7 +93,7 @@
                 android:id="@+id/btn_login_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:fontFamily="@font/nunitosemibold"
                 android:textColor="@color/backgroundclr"
                 android:background="@drawable/button_secondary"
