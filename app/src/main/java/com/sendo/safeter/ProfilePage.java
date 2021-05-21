@@ -65,7 +65,7 @@ public class ProfilePage extends AppCompatActivity {
 
         tampung = contactDB.countTableSize();
         Toast.makeText(this, tampung + "", Toast.LENGTH_SHORT).show();
-        contact = contactDB.getContact1(1);
+//        contact = contactDB.getContact1(1);
 
 //        if(tampung != 0){
 //            for(int i = 1; i <= tampung; i++){
