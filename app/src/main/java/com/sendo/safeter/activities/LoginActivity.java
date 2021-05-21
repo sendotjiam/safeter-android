@@ -2,7 +2,6 @@ package com.sendo.safeter.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,8 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.sendo.safeter.MainActivity;
+import com.sendo.safeter.HomePage;
 import com.sendo.safeter.R;
 import com.sendo.safeter.database.UserDB;
 import com.sendo.safeter.models.User;
@@ -41,12 +41,32 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int check = validation();
-                boolean userExists = getUser();
 
-                if (check == 1 && userExists) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                if (check == 1) {
+                    int nopass = 0;
+                    int count = userDB.countTableSize();
+                    if(count == 0){
+                        Toast.makeText(getApplicationContext(), "You must register first!", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(count != 0){
+                        for(int i = 1; i <= count; i++) {
+                            User user = userDB.getUser(i);
+                            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                                Toast.makeText(getApplicationContext(), "Login Successfully!", Toast.LENGTH_SHORT).show();
+                                int tampung_user_id = i;
+                                Intent homeintent = new Intent(getApplicationContext(), HomePage.class);
+                                homeintent.putExtra("USER_ID", tampung_user_id);
+                                startActivity(homeintent);
+                                finish();
+                            }
+                            else{
+                                nopass++;
+                            }
+                        }
+                    }
+                    if(nopass == count){
+                        Toast.makeText(getApplicationContext(), "You must register first!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -56,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -80,10 +99,6 @@ public class LoginActivity extends AppCompatActivity {
         btnRegis = findViewById(R.id.btn_login_sign_up);
 
         appName = findViewById(R.id.app_name);
-    }
-
-    private boolean getUser() {
-        return false;
     }
 
     private int validation() {

@@ -145,7 +145,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunitobold"
                         android:paddingLeft="20dp"
-                        android:text="Rp 120.000"
                         android:textColor="@color/black"
                         android:textSize="32dp" />
 
@@ -183,7 +182,6 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="Hendry Gunawan"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -207,7 +205,6 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="John Mayer Street No. 14A"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -231,7 +228,6 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="john.mayer@mail.com"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -255,7 +251,6 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="0812 1234 5678"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -298,7 +293,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/cont_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -308,7 +303,6 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="Hendry Gunawan"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -322,7 +316,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/cont_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -332,7 +326,7 @@
                     android:background="@drawable/text_profile"
                     android:fontFamily="@font/nunitosemibold"
                     android:padding="12dp"
-                    android:text="0812 1234 5678"
+                    android:inputType="number"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 

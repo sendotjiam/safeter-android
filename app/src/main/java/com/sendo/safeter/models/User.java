@@ -3,8 +3,9 @@ package com.sendo.safeter.models;
 public class User {
     private Long id;
     private String name, password, gender, email, phoneNumber, address;
+    private int balance;
 
-    public User(Long id, String name, String password, String gender, String email, String phoneNumber, String address) {
+    public User(Long id, String name, String password, String gender, String email, String phoneNumber, String address, int balance) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -12,6 +13,11 @@ public class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.balance = balance;
+    }
+
+    public User(){
+
     }
 
     public Long getId() {
@@ -68,5 +74,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }

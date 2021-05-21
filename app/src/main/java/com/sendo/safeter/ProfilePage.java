@@ -57,22 +57,25 @@ public class ProfilePage extends AppCompatActivity {
         userDB = new UserDB(this);
         contactDB = new ContactDB(this);
 
-//        listcontact = new ArrayList<>();
-//        EmergencyContact contact = new EmergencyContact("Daddy", "081261234567");
-//        listcontact.add(contact);
-//        EmergencyContact contact1 = new EmergencyContact("Mommy", "081261234567");
-//        listcontact.add(contact1);
+        listcontact = new ArrayList<>();
+        EmergencyContact contact = new EmergencyContact("Daddy", "081261234567");
+        listcontact.add(contact);
+        EmergencyContact contact1 = new EmergencyContact("Mommy", "081261234567");
+        listcontact.add(contact1);
 
         tampung = contactDB.countTableSize();
-        if(tampung != 0){
-            for(int i = 1; i <= tampung; i++){
-                contact = contactDB.getContact1(i);
-                if(contact.getUser_id() == userid){
-                    EmergencyContact contact2 = new EmergencyContact(contact.getEmergency_contact_name(), String.valueOf(contact.getEmergency_contact_phonenumber()));
-                    listcontact.add(contact2);
-                }
-            }
-        }
+        Toast.makeText(this, tampung + "", Toast.LENGTH_SHORT).show();
+        contact = contactDB.getContact1(1);
+
+//        if(tampung != 0){
+//            for(int i = 1; i <= tampung; i++){
+//                contact = contactDB.getContact1(i);
+//                if(contact.getUser_id() == userid){
+//                    EmergencyContact contact2 = new EmergencyContact(contact.getEmergency_contact_name(), String.valueOf(contact.getEmergency_contact_phonenumber()));
+//                    listcontact.add(contact2);
+//                }
+//            }
+//        }
 
 
 //        Toast.makeText(this, contacts.get(0).getEmergency_contact_name(), Toast.LENGTH_SHORT).show();

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,9 @@ public class SubscriptionPage extends AppCompatActivity {
     TextView price;
     TextView startdate;
     TextView enddate;
+    Button call;
+    Button profile;
+    int userid;
 
 
     @Override
@@ -34,20 +38,29 @@ public class SubscriptionPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription_page);
 
-        getSupportActionBar().hide();
-
         weekly = findViewById(R.id.btn_weekly);
         monthly = findViewById(R.id.btn_monthly);
         yearly = findViewById(R.id.btn_yearly);
+
+        Intent intent = getIntent();
+        userid = intent.getIntExtra("USER_ID_PROFILE", 0);
     }
 
     public void subscription(View view) {
     }
 
     public void call(View view) {
+        Intent intent = new Intent(this, HomePage.class);
+        intent.putExtra("USER_ID_PROFILE", userid);
+        startActivity(intent);
+        finish();
     }
 
     public void profile(View view) {
+        Intent intent = new Intent(this, ProfilePage.class);
+        intent.putExtra("USER_ID_PROFILE", userid);
+        startActivity(intent);
+        finish();
     }
 
     public void weekly(View view) {

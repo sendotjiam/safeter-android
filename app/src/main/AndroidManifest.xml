@@ -21,7 +21,6 @@
         <activity android:name=".HomePage" />
         <activity android:name=".SubscriptionPage" />
         <activity android:name=".TopUpPage" />
-        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

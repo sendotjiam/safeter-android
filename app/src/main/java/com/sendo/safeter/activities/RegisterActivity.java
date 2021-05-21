@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sendo.safeter.R;
 import com.sendo.safeter.database.UserDB;
@@ -43,9 +44,6 @@ public class RegisterActivity extends AppCompatActivity {
                 int check = validation();
                 if (check == 1) {
                     storeUser();
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
                 }
             }
         });
@@ -85,7 +83,20 @@ public class RegisterActivity extends AppCompatActivity {
         appName.setText(appNameSpannableString);
     }
 
-    private void storeUser() {}
+    private void storeUser() {
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        user.setGender(gender);
+        user.setEmail(email);
+        user.setPhoneNumber(phone);
+        user.setAddress(address);
+        user.setBalance(0);
+
+        userDB.storeUser(user);
+
+        Toast.makeText(this,"Register Successfull!", Toast.LENGTH_SHORT).show();
+    }
 
     private boolean isAplhanumeric(String password) {
         for (int i = 0; i < password.length(); i++) {
