@@ -10,29 +10,54 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sendo.safeter.database.UserDB;
+import com.sendo.safeter.models.User;
+
 public class HomePage extends AppCompatActivity {
 
     TextView name;
     ImageButton btn_oneclick;
-    int user_id;
+    UserDB userDB;
+    User user = new User();
+    int user_id, useridprofile, useridsubscription, useridlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        userDB = new UserDB(this);
+
         name = findViewById(R.id.name);
         btn_oneclick = findViewById(R.id.btn_oneclick);
 
         Intent homeintent = getIntent();
-        user_id = homeintent.getIntExtra("USER_ID", 0);
+        useridlogin = homeintent.getIntExtra("USER_ID", 0);
+        useridprofile = homeintent.getIntExtra("USERIDFROMPROFILE", 0);
+        useridsubscription = homeintent.getIntExtra("USERIDFROMSUBSCRIPT", 0);
+
+        user_id = 0;
+        if(useridlogin > user_id){
+            user_id = useridlogin;
+        }
+        if(useridprofile > user_id){
+            user_id = useridprofile;
+        }
+        if(useridsubscription > user_id){
+            user_id = useridsubscription;
+        }
+
+        user = userDB.getUser(user_id);
+
+        name.setText(user.getName());
+
         Toast.makeText(this, user_id + "", Toast.LENGTH_SHORT).show();
 
     }
 
     public void subscription(View view) {
         Intent intent = new Intent(this, SubscriptionPage.class);
-        intent.putExtra("USER_ID_PROFILE", user_id);
+        intent.putExtra("HOMETOSUBSCRIP", user_id);
         startActivity(intent);
         finish();
     }
@@ -43,7 +68,7 @@ public class HomePage extends AppCompatActivity {
 
     public void profile(View view) {
         Intent intent = new Intent(this, ProfilePage.class);
-        intent.putExtra("USER_ID_PROFILE", user_id);
+        intent.putExtra("HOMETOPROFILE", user_id);
         startActivity(intent);
         finish();
     }

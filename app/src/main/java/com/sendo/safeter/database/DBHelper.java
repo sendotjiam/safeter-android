@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     CT_USER_ID + " INTEGER NOT NULL REFERENCES " + CONTACT_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
                     CONTACT_NAME + " TEXT, " +
-                    CONTACT_NUMBER + " INTEGER)";
+                    CONTACT_NUMBER + " TEXT)";
 
 
     private static final String DROP_CONTACT_TABLE = "DROP TABLE IF EXISTS " + CONTACT_TABLE;

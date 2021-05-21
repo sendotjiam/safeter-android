@@ -30,7 +30,7 @@ public class SubscriptionPage extends AppCompatActivity {
     TextView enddate;
     Button call;
     Button profile;
-    int userid;
+    int user_id, useridprofile, useridhome;
 
 
     @Override
@@ -43,7 +43,16 @@ public class SubscriptionPage extends AppCompatActivity {
         yearly = findViewById(R.id.btn_yearly);
 
         Intent intent = getIntent();
-        userid = intent.getIntExtra("USER_ID_PROFILE", 0);
+        useridprofile = intent.getIntExtra("PROFILETOSUBSCRIPT", 0);
+        useridhome = intent.getIntExtra("HOMETOSUBSCRIP", 0);
+
+        user_id = 0;
+        if(useridprofile > user_id){
+            user_id = useridprofile;
+        }
+        if(useridhome > user_id){
+            user_id = useridhome;
+        }
     }
 
     public void subscription(View view) {
@@ -51,14 +60,14 @@ public class SubscriptionPage extends AppCompatActivity {
 
     public void call(View view) {
         Intent intent = new Intent(this, HomePage.class);
-        intent.putExtra("USER_ID_PROFILE", userid);
+        intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
         startActivity(intent);
         finish();
     }
 
     public void profile(View view) {
         Intent intent = new Intent(this, ProfilePage.class);
-        intent.putExtra("USER_ID_PROFILE", userid);
+        intent.putExtra("SUBSCRIPTOPROFILE", user_id);
         startActivity(intent);
         finish();
     }

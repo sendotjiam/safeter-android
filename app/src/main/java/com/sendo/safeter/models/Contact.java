@@ -4,9 +4,9 @@ public class Contact {
     int contact_id;
     int user_id;
     String emergency_contact_name;
-    long emergency_contact_phonenumber;
+    String emergency_contact_phonenumber;
 
-    public Contact(int contact_id, int user_id, String emergency_contact_name, long emergency_contact_phonenumber) {
+    public Contact(int contact_id, int user_id, String emergency_contact_name, String emergency_contact_phonenumber) {
         this.contact_id = contact_id;
         this.user_id = user_id;
         this.emergency_contact_name = emergency_contact_name;
@@ -41,11 +41,16 @@ public class Contact {
         this.emergency_contact_name = emergency_contact_name;
     }
 
-    public long getEmergency_contact_phonenumber() {
+    public String getEmergency_contact_phonenumber() {
         return emergency_contact_phonenumber;
     }
 
-    public void setEmergency_contact_phonenumber(long emergency_contact_phonenumber) {
+    public void setEmergency_contact_phonenumber(String emergency_contact_phonenumber) {
         this.emergency_contact_phonenumber = emergency_contact_phonenumber;
+    }
+
+    @Override
+    public String toString() {
+        return emergency_contact_name + " - " + emergency_contact_phonenumber ;
     }
 }
