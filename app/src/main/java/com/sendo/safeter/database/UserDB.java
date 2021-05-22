@@ -33,7 +33,7 @@ public class UserDB {
         sqLiteDatabase.close();
     }
 
-    public User getUser(int id){
+    public User getUser(int id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String selection = "id=?";
@@ -43,7 +43,7 @@ public class UserDB {
 
         User user = null;
 
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             user = new User();
             user.setId(cursor.getLong(cursor.getColumnIndex(DBHelper.USER_ID)));
             user.setName(cursor.getString(cursor.getColumnIndex(DBHelper.USER_NAME)));
@@ -60,7 +60,7 @@ public class UserDB {
         return user;
     }
 
-    public int countTableSize(){
+    public int countTableSize() {
         String count = "SELECT * FROM " + DBHelper.USER_TABLE;
         sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(count, null);
@@ -71,7 +71,7 @@ public class UserDB {
         return count_size;
     }
 
-    public void updateNominal(User user, int id, int nominal){
+    public void updateNominal(User user, int id, int nominal) {
         sqLiteDatabase = dbHelper.getWritableDatabase();
 
         String whereClause = "id=?";
@@ -86,7 +86,7 @@ public class UserDB {
         sqLiteDatabase.close();
     }
 
-    public void minusNominal(User user, int id, int nominal){
+    public void minusNominal(User user, int id, int nominal) {
         sqLiteDatabase = dbHelper.getWritableDatabase();
 
         String whereClause = "id=?";

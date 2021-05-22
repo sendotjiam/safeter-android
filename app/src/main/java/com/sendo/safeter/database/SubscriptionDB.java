@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class SubscriptionDB {
     private DBHelper dbHelper;
 
+
     public SubscriptionDB(Context ctx) {
         dbHelper = new DBHelper(ctx);
     }
@@ -30,6 +31,7 @@ public class SubscriptionDB {
         db.insert(DBHelper.SUBSCRIPTION_TABLE, "N/A", cv);
 
         db.close();
+        dbHelper.close();
     }
 
     public ArrayList<Subscription> getSubscription(int id) {
@@ -65,4 +67,17 @@ public class SubscriptionDB {
         cursor.close();
         return subscriptions;
     }
+
+    public int countTableSize(int userid){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String count = "SELECT * FROM Subscriptions WHERE st_user_id=? ";
+        Cursor cursor = db.rawQuery(count, new String[]{Integer.toString(userid)});
+        int count_size =  cursor.getCount();
+
+        cursor.close();
+        db.close();
+        return count_size;
+    }
+
+
 }
