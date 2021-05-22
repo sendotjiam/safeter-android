@@ -78,10 +78,6 @@ public class SubscriptionPage extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, HomePage.class);
-        intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
-        startActivity(intent);
-        finish();
     }
 
     public void monthly(View view) {
@@ -90,10 +86,6 @@ public class SubscriptionPage extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, HomePage.class);
-        intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
-        startActivity(intent);
-        finish();
     }
 
     public void yearly(View view) {
@@ -102,17 +94,6 @@ public class SubscriptionPage extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        //kurangi nominal user
-        //pas mau insert subscription, cek dulu database udh ada data belum
-        //kalau belum tgl lsng insert aja
-        //kalau sudah, ambil dlu data databasenya masukkin k arraylist lalu
-        //ambil expired date terakhir dari arraylistnya (arraylist.size() -  1)
-        //baru deh expired date terakhir itu lu tmbhin sesuai dia beli weekly,monthly, atau yearly
-        //baru diinsert ke databasenya
-        Intent intent = new Intent(this, HomePage.class);
-        intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
-        startActivity(intent);
-        finish();
     }
 
     private void showdialogweekly() throws ParseException {
@@ -147,7 +128,18 @@ public class SubscriptionPage extends AppCompatActivity {
         buysubscribe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //kurangi nominal user
+                //pas mau insert subscription, cek dulu database udh ada data belum
+                //kalau belum tgl lsng insert aja
+                //kalau sudah, ambil dlu data databasenya masukkin k arraylist lalu
+                //ambil expired date terakhir dari arraylistnya (arraylist.size() -  1)
+                //baru deh expired date terakhir itu lu tmbhin sesuai dia beli weekly,monthly, atau yearly
+                //baru diinsert ke databasenya
                 dialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -188,6 +180,10 @@ public class SubscriptionPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -228,6 +224,10 @@ public class SubscriptionPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                intent.putExtra("USERIDFROMSUBSCRIPT", user_id);
+                startActivity(intent);
+                finish();
             }
         });
 
