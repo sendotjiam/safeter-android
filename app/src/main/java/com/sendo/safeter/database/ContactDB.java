@@ -33,11 +33,11 @@ public class ContactDB {
     public ArrayList<Contact> getContact(int id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        String get_history = "SELECT *" +
+        String get_contact = "SELECT *" +
                 " FROM " + DBHelper.CONTACT_TABLE + " t " +
                 " WHERE t. " + DBHelper.CT_USER_ID + " = " + id;
 
-        Cursor cursor = db.rawQuery(get_history, null);
+        Cursor cursor = db.rawQuery(get_contact, null);
 
         ArrayList<Contact> contacts = new ArrayList<>();
 
@@ -61,6 +61,5 @@ public class ContactDB {
         cursor.close();
         return contacts;
     }
-
 
 }

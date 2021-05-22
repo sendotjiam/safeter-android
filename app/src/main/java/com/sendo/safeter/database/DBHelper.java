@@ -50,21 +50,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DROP_CONTACT_TABLE = "DROP TABLE IF EXISTS " + CONTACT_TABLE;
 
-    public static final String SUBCRIPTION_TABLE = "Subscriptions";
+    public static final String SUBSCRIPTION_TABLE = "Subscriptions";
     public static final String SUBSCRIPTION_ID = "subscription_id";
     public static final String ST_USER_ID = "st_user_id";
+    public static final String SUBSCRIPTION_TYPE = "ct_type";
     public static final String SUBSCRIPTION_CREATED_DATE = "ct_created_date";
     public static final String SUBSCRIPTION_EXPIRED_DATE = "ct_expired_date";
 
     private static final String CREATE_SUBSCRIPTION_TABLE =
-            "CREATE TABLE IF NOT EXISTS " + SUBCRIPTION_TABLE + " (" +
+            "CREATE TABLE IF NOT EXISTS " + SUBSCRIPTION_TABLE + " (" +
                     SUBSCRIPTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     ST_USER_ID + " INTEGER NOT NULL REFERENCES " + CONTACT_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
+                    SUBSCRIPTION_TYPE + "TEXT, " +
                     SUBSCRIPTION_CREATED_DATE + " TEXT, " +
                     SUBSCRIPTION_EXPIRED_DATE + " TEXT)";
 
 
-    private static final String DROP_SUBSCRIPTION_TABLE = "DROP TABLE IF EXISTS " + SUBCRIPTION_TABLE;
+    private static final String DROP_SUBSCRIPTION_TABLE = "DROP TABLE IF EXISTS " + SUBSCRIPTION_TABLE;
 
     public DBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);

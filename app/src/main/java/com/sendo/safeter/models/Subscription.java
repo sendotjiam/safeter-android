@@ -3,12 +3,14 @@ package com.sendo.safeter.models;
 public class Subscription {
     int subscription_id;
     int user_id;
+    String type;
     String created_date;
     String expired_date;
 
-    public Subscription(int subscription_id, int user_id, String created_date, String expired_date) {
+    public Subscription(int subscription_id, int user_id, String type, String created_date, String expired_date) {
         this.subscription_id = subscription_id;
         this.user_id = user_id;
+        this.type = type;
         this.created_date = created_date;
         this.expired_date = expired_date;
     }
@@ -31,6 +33,14 @@ public class Subscription {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getCreated_date() {
