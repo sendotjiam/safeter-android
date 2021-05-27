@@ -207,6 +207,7 @@
                 android:background="@drawable/edit_text"
                 android:fontFamily="@font/nunitobold"
                 android:layout_marginTop="5dp"
+                android:inputType="textPassword"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
