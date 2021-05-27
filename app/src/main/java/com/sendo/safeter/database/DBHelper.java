@@ -53,15 +53,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String SUBSCRIPTION_TABLE = "Subscriptions";
     public static final String SUBSCRIPTION_ID = "subscription_id";
     public static final String ST_USER_ID = "st_user_id";
-    public static final String SUBSCRIPTION_TYPE = "ct_type";
-    public static final String SUBSCRIPTION_CREATED_DATE = "ct_created_date";
-    public static final String SUBSCRIPTION_EXPIRED_DATE = "ct_expired_date";
+    public static final String SUBSCRIPTION_TYPE = "subcription_type";
+    public static final String SUBSCRIPTION_CREATED_DATE = "subcription_created_date";
+    public static final String SUBSCRIPTION_EXPIRED_DATE = "subcription_expired_date";
 
     private static final String CREATE_SUBSCRIPTION_TABLE =
             "CREATE TABLE IF NOT EXISTS " + SUBSCRIPTION_TABLE + " (" +
                     SUBSCRIPTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     ST_USER_ID + " INTEGER NOT NULL REFERENCES " + USER_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
-                    SUBSCRIPTION_TYPE + "TEXT, " +
+                    SUBSCRIPTION_TYPE + " TEXT, " +
                     SUBSCRIPTION_CREATED_DATE + " TEXT, " +
                     SUBSCRIPTION_EXPIRED_DATE + " TEXT)";
 

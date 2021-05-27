@@ -10,16 +10,28 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sendo.safeter.database.SubscriptionDB;
 import com.sendo.safeter.database.UserDB;
+import com.sendo.safeter.models.Subscription;
 import com.sendo.safeter.models.User;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class HomePage extends AppCompatActivity {
 
-    TextView name;
+    TextView name, expired;
     ImageButton btn_oneclick;
     UserDB userDB;
     User user = new User();
     int user_id, useridprofile, useridsubscription, useridlogin;
+    SubscriptionDB subscriptionDB = new SubscriptionDB(this);
+    ArrayList<Subscription> arraySub = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,7 @@ public class HomePage extends AppCompatActivity {
 
         name = findViewById(R.id.name);
         btn_oneclick = findViewById(R.id.btn_oneclick);
+        expired = findViewById(R.id.expired);
 
         Intent homeintent = getIntent();
         useridlogin = homeintent.getIntExtra("USER_ID", 0);
@@ -52,6 +65,24 @@ public class HomePage extends AppCompatActivity {
         name.setText(user.getName());
 
         Toast.makeText(this, user_id + "", Toast.LENGTH_SHORT).show();
+
+        arraySub = subscriptionDB.getSubscription(user_id);
+        int array = subscriptionDB.countTableSize(user_id);
+        if(array != 0){
+            arraySub = subscriptionDB.getSubscription(user_id);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            Date now = new Date();
+            Date date1 = null;
+            try {
+                date1 = simpleDateFormat.parse(arraySub.get(array-1).getExpired_date());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            long temp = date1.getTime() - now.getTime() ;
+            temp = temp/ 86400000;
+            expired.setText("Expired in " + String.valueOf(temp+1) + " days");
+        }
+
 
     }
 

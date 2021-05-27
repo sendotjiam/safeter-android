@@ -136,14 +136,24 @@
                 android:textColor="@color/white"
                 android:textSize="32dp" />
 
+            <TextView
+                android:id="@+id/expired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Expired in 10 days"
+                android:textColor="@color/red"
+                android:textSize="20dp" />
+
         </LinearLayout>
 
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_gravity="bottom"
-            android:paddingRight="20dp"
             android:onClick="oneclick"
+            android:paddingRight="20dp"
             android:src="@drawable/profile" />
 
     </LinearLayout>
