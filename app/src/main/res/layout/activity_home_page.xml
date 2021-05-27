@@ -142,7 +142,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/nunitobold"
-                android:text="Expired in 10 days"
                 android:textColor="@color/red"
                 android:textSize="20dp" />
 
