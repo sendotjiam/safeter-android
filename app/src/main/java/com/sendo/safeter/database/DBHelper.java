@@ -43,7 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String CREATE_CONTACT_TABLE =
             "CREATE TABLE IF NOT EXISTS " + CONTACT_TABLE + " (" +
                     CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    CT_USER_ID + " INTEGER NOT NULL REFERENCES " + CONTACT_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
+                    CT_USER_ID + " INTEGER NOT NULL REFERENCES " + USER_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
                     CONTACT_NAME + " TEXT, " +
                     CONTACT_NUMBER + " TEXT)";
 
@@ -60,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String CREATE_SUBSCRIPTION_TABLE =
             "CREATE TABLE IF NOT EXISTS " + SUBSCRIPTION_TABLE + " (" +
                     SUBSCRIPTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    ST_USER_ID + " INTEGER NOT NULL REFERENCES " + CONTACT_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
+                    ST_USER_ID + " INTEGER NOT NULL REFERENCES " + USER_TABLE + "(" + USER_ID + ") ON UPDATE CASCADE," +
                     SUBSCRIPTION_TYPE + "TEXT, " +
                     SUBSCRIPTION_CREATED_DATE + " TEXT, " +
                     SUBSCRIPTION_EXPIRED_DATE + " TEXT)";
