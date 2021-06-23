@@ -11,4 +11,5 @@
     <string name="input_gender">Gender</string>
     <string name="input_phone_number">Phone Number</string>
     <string name="input_address">Address</string>
+    <string name="double_click_me_if_you_feel_danger">Double click me if you feel danger</string>
 </resources>

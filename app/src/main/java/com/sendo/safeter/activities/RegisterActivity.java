@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 int check = validation();
                 if (check == 1) {
                     storeUser();
+                    intentBackToLogin();
                 }
             }
         });
@@ -52,11 +53,15 @@ public class RegisterActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                intentBackToLogin();
             }
         });
+    }
+
+    private void intentBackToLogin() {
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void initialize() {
